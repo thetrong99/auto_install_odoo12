@@ -12,11 +12,12 @@ sudo yum install -y python36 python36-devel
 
 sudo yum install -y git gcc wget nodejs libxslt-devel bzip2-devel openldap-devel libjpeg-devel freetype-devel
 
-# install postgreSQL
-sudo yum install -y postgresql postgresql-server postgresql-contrib
-sudo /usr/bin/postgresql-setup initdb
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
+# install postgreSQL14
+sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo yum repolist -y
+sudo yum install -y postgresql14-server postgresql14
+sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
+sudo systemctl enable --now postgresql-14
 #Create a new PostgreSQL user
 sudo su - postgres -c "createuser -s odoo"
 
