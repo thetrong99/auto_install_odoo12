@@ -8,7 +8,7 @@ SyslogIdentifier=tsm
 PermissionsStartOnly=true
 User=tsm
 Group=tsm
-ExecStart=/home/tsm/.pyenv/versions/backend-env/bin/python3 /opt/tsm-backend/tsm_od//odoo-bin -c /etc/tsm-backend.conf --logfile /var/log/backend/tsm-backend.log
+ExecStart=/home/tsm/.pyenv/versions/backend-env/bin/python3 /opt/tsm-backend/odoo12/odoo-bin -c /etc/tsm-backend.conf --logfile /var/log/backend/tsm-backend.log
 StandardOutput=journal+console
 
 [Install]
